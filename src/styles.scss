@@ -1,4 +1,134 @@
-body{
-    background-color: rgb(240, 240, 240);
-    height: 100vh;
+body {
+  background-color: rgb(229, 229, 229);
+  height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template: 5em 1fr / 20em 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  .header {
+    grid-area: header;
+    background-color: #264653;
+    padding: 1em;
+    h1{
+        margin: 0;
+        color: white;
+    }
+  }
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #cecece;
+    padding: 1em;
+  }
+  .content {
+    grid-area: content;
+    background-color: #f6f6f6;
+    padding: 1em;
+  }
+  .priority1 {
+    color: red;
+  }
+  .priority2 {
+    color: yellow;
+  }
+  .priority3 {
+    color: green;
+  }
+  form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c8c8c8;
+    color: rgb(18, 18, 18);
+    flex-direction: column;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2em;
+    width: 25em;
+    display: none;
+    h2 {
+      margin-top: 0;
+    }
+    #desc {
+      input {
+        height: 7em;
+      }
+    }
+    .input-box > * {
+      display: block;
+    }
+    .input-box > input {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0.4em 0px;
+      height: 1.8em;
+      padding: 0.8em;
+      border-radius: 0px;
+      border: rgb(70, 70, 70) solid 1px;
+      font-family: inherit;
+      font-size: 1em;
+    }
+    select {
+      font-family: inherit;
+      font-size: 1em;
+      margin: 0.4em 0px;
+    }
+    textarea {
+      height: 10em;
+      width: 100%;
+      box-sizing: border-box;
+      resize: vertical;
+      min-height: 10em;
+      padding: 0.8em;
+      font-family: inherit;
+      font-size: 1em;
+      max-height: 20em;
+      margin: 0.4em 0px;
+    }
+    .input-box > input:focus-visible {
+      outline: none;
+      box-shadow: 0px 0px 2px #000000;
+    }
+
+    .input-box > input:invalid {
+      border: #db0000 solid 2px;
+      border-radius: 0px;
+    }
+    .input-box > label {
+      font-size: 1em;
+      font-weight: 600;
+    }
+    .input-box > p.error {
+      margin: 0px;
+      color: #db0000;
+    }
+    #submit-box {
+      display: flex;
+      gap: 1em;
+      justify-content: flex-end;
+      button{
+        padding: .5em 1em;
+        text-align: center;
+        text-decoration: none;
+        display: inline;
+        font-size: 1em;
+        margin-top: 1em;
+      }
+      button.create {
+        background-color: #264653;
+        border: none;
+        color: white;
+
+      }
+      button.create:hover {
+        background-color: #446d7c;
+      }
+    }
+  }
 }
