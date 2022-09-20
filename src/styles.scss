@@ -1,41 +1,114 @@
 body {
-  background-color: rgb(229, 229, 229);
+  // background-color: rgb(229, 229, 229);
   height: 100vh;
   margin: 0;
+  background-image: url(./favicon-32x32.png);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  
 }
 .container {
   display: grid;
   height: 100vh;
   grid-template: 5em 1fr / 20em 1fr;
+
   grid-template-areas:
     "header header"
     "sidebar content";
+
   .header {
     grid-area: header;
     background-color: #264653;
     padding: 1em;
-    h1{
-        margin: 0;
-        color: white;
+    h1 {
+      margin: 0;
+      color: white;
     }
   }
   .sidebar {
     grid-area: sidebar;
-    background-color: #cecece;
+    background-color: #e1e1e1;
     padding: 1em;
+    // position: relative;
+    user-select: none;
+    .projects-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0em 1em;
+      h2 {
+        width: fit-content;
+        margin: 0.5em 0em 0.5em 0em;
+      }
+
+      button {
+        height: 2.9em;
+        width: 2.9em;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .projects {
+      height: 20em;
+      overflow-y: auto;
+    }
+    ul {
+      $projectPadding: 1em;
+      padding-left: $projectPadding;
+      position: relative;
+      width: max-content;
+      margin: 0;
+    }
+
+    .project-name {
+      list-style: none;
+      margin: 0;
+      padding: 4px 0 4px 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .project-name.expanded::before {
+      background: url("caret.png") no-repeat 0em / 0.6em;
+      content: "";
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      left: calc(2.1em - 1em);
+      top: 0.6em;
+      transform: rotate(90deg);
+    }
+    .project-name.unexpanded::before {
+      background: url("caret.png") no-repeat 0em / 0.6em;
+      content: "";
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      left: calc(2.3em - 1em);
+      top: 0.4em;
+    }
+    .task-name {
+      list-style: none;
+      padding-left: 2em;
+    }
   }
   .content {
     grid-area: content;
     background-color: #f6f6f6;
     padding: 1em;
+    button {
+      background: none;
+      border: none;
+      height: 4em;
+      width: 4em;
+      filter: invert(19%) sepia(5%) saturate(5450%) hue-rotate(152deg)
+        brightness(96%) contrast(79%);
+      cursor: pointer;
+    }
   }
   .priority1 {
     color: red;
   }
   .priority2 {
-    color: yellow;
+    color: orange;
   }
   .priority3 {
     color: green;
@@ -112,8 +185,8 @@ body {
       display: flex;
       gap: 1em;
       justify-content: flex-end;
-      button{
-        padding: .5em 1em;
+      button {
+        padding: 0.5em 1em;
         text-align: center;
         text-decoration: none;
         display: inline;
@@ -124,7 +197,6 @@ body {
         background-color: #264653;
         border: none;
         color: white;
-
       }
       button.create:hover {
         background-color: #446d7c;

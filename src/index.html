@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <script src="main.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <title>Completionist</title>
   </head>
   <body>
@@ -14,26 +13,29 @@
         <h1>Completionist ✓</h1>
       </div>
       <div class="sidebar">
-        <ul>
-          <li>Link1</li>
-          <li>Link2</li>
-          <li>Link3</li>
-          <li>Link4</li>
-          <li>Link5</li>
-        </ul>
+        <div class="projects-header">
+          <h2>Projects</h2>
+          <button onclick="onClickAddProject()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M17,13H13V17H11V13H7V11H11V7H13V11H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="projects"></div>
+        <button onclick="deleteSelectedProject()">Delete Selected Project</button>
       </div>
       <div class="content">
-      <button onclick="onClickAddTask()">Add Task</button>
-        <ul>
-          <li>Task1</li>
-          <li>Task2</li>
-          <li>Task3</li>
-          <li>Task4</li>
-        </ul>
+        <button onclick="onClickAddTask()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
+          </svg>
+        </button>
       </div>
-      <form>
+      <form class="task-create">
         <h2>Create a Task</h2>
-        <hr style="width: 100%;">
+        <hr style="width: 100%" />
         <div class="input-box" id="title">
           <label for="title">Title:</label>
           <input type="text" name="title" />
@@ -57,10 +59,39 @@
             <option value="1">High</option>
           </select>
         </div>
-        <hr style="width: 100%;">
+        <hr style="width: 100%" />
         <div class="input-box" id="submit-box">
-          <button onclick="onClickCancelForm()" type="button" class="cancel">Cancel</button>
-          <button onclick="onClickCreateTask()" type="button" class="create">Create Task</button>
+          <button
+            onclick="onClickCancelTaskForm()"
+            type="button"
+            class="cancel"
+          >
+            Cancel
+          </button>
+          <button onclick="onClickCreateTask()" type="button" class="create">
+            Create Task
+          </button>
+        </div>
+      </form>
+      <form class="project-create">
+        <h2>Create a Project</h2>
+        <hr style="width: 100%" />
+        <div class="input-box" id="title">
+          <label for="title">Title:</label>
+          <input type="text" name="title" />
+        </div>
+        <hr style="width: 100%" />
+        <div class="input-box" id="submit-box">
+          <button
+            onclick="onClickCancelProjectForm()"
+            type="button"
+            class="cancel"
+          >
+            Cancel
+          </button>
+          <button onclick="onClickCreateProject()" type="button" class="create">
+            Create Project
+          </button>
         </div>
       </form>
     </div>

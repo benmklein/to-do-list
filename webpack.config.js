@@ -6,8 +6,8 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   plugins: [
@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-        use: ['file-loader?name=[name].[ext]']
+        type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
